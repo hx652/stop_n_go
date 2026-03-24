@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="trapezoid_ur7e_scene">
+    <xacro:arg name="initial_positions_file" default="$(find trapezoid_ur_moveit_config)/config/initial_positions.yaml" />
+    <xacro:arg name="use_fake_hardware" default="false" />
+    <xacro:arg name="sim_gazebo" default="true" />
+    <xacro:arg name="fake_sensor_commands" default="false" />
+    <xacro:arg name="simulation_controllers" default="$(find trapezoid_ur_moveit_config)/config/ros2_controllers.yaml" />
+
+    <!-- Import trapezoid_ur7e_scene urdf file -->
+    <xacro:include filename="$(find trapezoid_ur_description)/urdf/trapezoid_ur7e_scene.urdf.xacro" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="trapezoid_ur7e_scene.ros2_control.xacro" />
+
+
+    <xacro:trapezoid_ur7e_scene_ros2_control
+        name="trapezoid_ur7e_scene_system"
+        initial_positions_file="$(arg initial_positions_file)"
+        use_fake_hardware="$(arg use_fake_hardware)"
+        sim_gazebo="$(arg sim_gazebo)"
+        fake_sensor_commands="$(arg fake_sensor_commands)"/>
+
+    <xacro:if value="$(arg sim_gazebo)">
+        <gazebo>
+            <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+                <robot_param>robot_description</robot_param>
+                <robot_param_node>robot_state_publisher</robot_param_node>
+                <parameters>$(arg simulation_controllers)</parameters>
+            </plugin>
+        </gazebo>
+    </xacro:if>
+
+</robot>

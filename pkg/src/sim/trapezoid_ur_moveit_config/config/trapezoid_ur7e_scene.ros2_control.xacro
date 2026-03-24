@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="trapezoid_ur_joint_ros2_control" params="joint_name initial_value">
+        <joint name="${joint_name}">
+            <command_interface name="position"/>
+            <state_interface name="position">
+              <param name="initial_value">${initial_value}</param>
+            </state_interface>
+        </joint>
+    </xacro:macro>
+
+    <xacro:macro name="trapezoid_ur7e_scene_ros2_control" params="name initial_positions_file use_fake_hardware:=true sim_gazebo:=false fake_sensor_commands:=false">
+        <xacro:property name="initial_positions" value="${xacro.load_yaml(initial_positions_file)['initial_positions']}"/>
+
+        <ros2_control name="${name}" type="system">
+            <hardware>
+                <xacro:if value="${sim_gazebo}">
+                    <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+                </xacro:if>
+                <xacro:unless value="${sim_gazebo}">
+                    <plugin>mock_components/GenericSystem</plugin>
+                    <param name="fake_sensor_commands">${fake_sensor_commands}</param>
+                    <param name="state_following_offset">0.0</param>
+                    <param name="calculate_dynamics">true</param>
+                </xacro:unless>
+            </hardware>
+
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm1_shoulder_pan_joint" initial_value="${initial_positions['arm1_shoulder_pan_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm1_shoulder_lift_joint" initial_value="${initial_positions['arm1_shoulder_lift_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm1_elbow_joint" initial_value="${initial_positions['arm1_elbow_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm1_wrist_1_joint" initial_value="${initial_positions['arm1_wrist_1_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm1_wrist_2_joint" initial_value="${initial_positions['arm1_wrist_2_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm1_wrist_3_joint" initial_value="${initial_positions['arm1_wrist_3_joint']}"/>
+
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm2_shoulder_pan_joint" initial_value="${initial_positions['arm2_shoulder_pan_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm2_shoulder_lift_joint" initial_value="${initial_positions['arm2_shoulder_lift_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm2_elbow_joint" initial_value="${initial_positions['arm2_elbow_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm2_wrist_1_joint" initial_value="${initial_positions['arm2_wrist_1_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm2_wrist_2_joint" initial_value="${initial_positions['arm2_wrist_2_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm2_wrist_3_joint" initial_value="${initial_positions['arm2_wrist_3_joint']}"/>
+
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm3_shoulder_pan_joint" initial_value="${initial_positions['arm3_shoulder_pan_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm3_shoulder_lift_joint" initial_value="${initial_positions['arm3_shoulder_lift_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm3_elbow_joint" initial_value="${initial_positions['arm3_elbow_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm3_wrist_1_joint" initial_value="${initial_positions['arm3_wrist_1_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm3_wrist_2_joint" initial_value="${initial_positions['arm3_wrist_2_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm3_wrist_3_joint" initial_value="${initial_positions['arm3_wrist_3_joint']}"/>
+
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm4_shoulder_pan_joint" initial_value="${initial_positions['arm4_shoulder_pan_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm4_shoulder_lift_joint" initial_value="${initial_positions['arm4_shoulder_lift_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm4_elbow_joint" initial_value="${initial_positions['arm4_elbow_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm4_wrist_1_joint" initial_value="${initial_positions['arm4_wrist_1_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm4_wrist_2_joint" initial_value="${initial_positions['arm4_wrist_2_joint']}"/>
+            <xacro:trapezoid_ur_joint_ros2_control joint_name="arm4_wrist_3_joint" initial_value="${initial_positions['arm4_wrist_3_joint']}"/>
+        </ros2_control>
+    </xacro:macro>
+</robot>

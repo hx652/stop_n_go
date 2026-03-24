@@ -1,0 +1,84 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    arm1_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+    arm2_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+    arm3_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+    arm4_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+arm1_controller:
+  ros__parameters:
+    joints:
+      - arm1_shoulder_pan_joint
+      - arm1_shoulder_lift_joint
+      - arm1_elbow_joint
+      - arm1_wrist_1_joint
+      - arm1_wrist_2_joint
+      - arm1_wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+
+
+arm2_controller:
+  ros__parameters:
+    joints:
+      - arm2_shoulder_pan_joint
+      - arm2_shoulder_lift_joint
+      - arm2_elbow_joint
+      - arm2_wrist_1_joint
+      - arm2_wrist_2_joint
+      - arm2_wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+
+
+arm3_controller:
+  ros__parameters:
+    joints:
+      - arm3_shoulder_pan_joint
+      - arm3_shoulder_lift_joint
+      - arm3_elbow_joint
+      - arm3_wrist_1_joint
+      - arm3_wrist_2_joint
+      - arm3_wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+
+
+arm4_controller:
+  ros__parameters:
+    joints:
+      - arm4_shoulder_pan_joint
+      - arm4_shoulder_lift_joint
+      - arm4_elbow_joint
+      - arm4_wrist_1_joint
+      - arm4_wrist_2_joint
+      - arm4_wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+
+

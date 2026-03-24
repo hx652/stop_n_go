@@ -1,0 +1,55 @@
+# MoveIt uses this configuration for controller management
+
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - arm1_controller
+    - arm2_controller
+    - arm3_controller
+    - arm4_controller
+
+  arm1_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - arm1_shoulder_pan_joint
+      - arm1_shoulder_lift_joint
+      - arm1_elbow_joint
+      - arm1_wrist_1_joint
+      - arm1_wrist_2_joint
+      - arm1_wrist_3_joint
+  arm2_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - arm2_shoulder_pan_joint
+      - arm2_shoulder_lift_joint
+      - arm2_elbow_joint
+      - arm2_wrist_1_joint
+      - arm2_wrist_2_joint
+      - arm2_wrist_3_joint
+  arm3_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - arm3_shoulder_pan_joint
+      - arm3_shoulder_lift_joint
+      - arm3_elbow_joint
+      - arm3_wrist_1_joint
+      - arm3_wrist_2_joint
+      - arm3_wrist_3_joint
+  arm4_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - arm4_shoulder_pan_joint
+      - arm4_shoulder_lift_joint
+      - arm4_elbow_joint
+      - arm4_wrist_1_joint
+      - arm4_wrist_2_joint
+      - arm4_wrist_3_joint

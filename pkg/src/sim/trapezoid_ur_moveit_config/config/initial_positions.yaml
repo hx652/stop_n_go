@@ -1,0 +1,27 @@
+# Default initial positions for trapezoid_ur7e_scene's ros2_control fake system
+
+initial_positions:
+  arm1_elbow_joint: 0.0
+  arm1_shoulder_lift_joint: -1.57
+  arm1_shoulder_pan_joint: 0.0
+  arm1_wrist_1_joint: -1.57
+  arm1_wrist_2_joint: 0.0
+  arm1_wrist_3_joint: 0.0
+  arm2_elbow_joint: 0.0
+  arm2_shoulder_lift_joint: -1.57
+  arm2_shoulder_pan_joint: 0.0
+  arm2_wrist_1_joint: -1.57
+  arm2_wrist_2_joint: 0.0
+  arm2_wrist_3_joint: 0.0
+  arm3_elbow_joint: 0.0
+  arm3_shoulder_lift_joint: -1.57
+  arm3_shoulder_pan_joint: 0.0
+  arm3_wrist_1_joint: -1.57
+  arm3_wrist_2_joint: 0.0
+  arm3_wrist_3_joint: 0.0
+  arm4_elbow_joint: 0.0
+  arm4_shoulder_lift_joint: -1.57
+  arm4_shoulder_pan_joint: 0.0
+  arm4_wrist_1_joint: -1.57
+  arm4_wrist_2_joint: 0.0
+  arm4_wrist_3_joint: 0.0
