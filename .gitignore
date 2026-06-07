@@ -1,4 +1,10 @@
 Stop-N-Go.pdf
+.claude/
+AGENTS.md
+todo.md
 pkg/build/
+pkg/.cache/
 pkg/install/
 pkg/log/
+pkg/Testing/
+ws_moveit/

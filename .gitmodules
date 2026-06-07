@@ -1,0 +1,4 @@
+[submodule "pkg/src/sim/Universal_Robots_ROS2_Description"]
+	path = pkg/src/sim/Universal_Robots_ROS2_Description
+	url = https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
+	branch = humble
