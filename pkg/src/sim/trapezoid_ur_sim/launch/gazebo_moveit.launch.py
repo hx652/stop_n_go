@@ -85,7 +85,7 @@ def generate_launch_description():
         arguments=[
             "-d",
             PathJoinSubstitution(
-                [FindPackageShare("trapezoid_ur_moveit_config"), "config", "moveit.rviz"]
+                [FindPackageShare("trapezoid_ur_sim"), "config", "stop_n_go_moveit.rviz"]
             ),
         ],
         parameters=[

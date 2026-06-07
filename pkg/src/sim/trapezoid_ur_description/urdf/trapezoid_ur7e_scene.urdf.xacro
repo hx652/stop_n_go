@@ -21,7 +21,7 @@
     visual_parameters_file="${visual_params}"
     sim_gazebo="$(arg sim_gazebo)"
     generate_ros2_control_tag="false">
-    <origin xyz="-0.70 -0.58 0.0" rpy="0 0 0.692"/>
+    <origin xyz="-0.70 -0.58 0.0" rpy="0 0 0"/>
   </xacro:ur_robot>
 
   <xacro:ur_robot
@@ -34,7 +34,7 @@
     visual_parameters_file="${visual_params}"
     sim_gazebo="$(arg sim_gazebo)"
     generate_ros2_control_tag="false">
-    <origin xyz="0.70 -0.58 0.0" rpy="0 0 2.450"/>
+    <origin xyz="0.70 -0.58 0.0" rpy="0 0 0"/>
   </xacro:ur_robot>
 
   <xacro:ur_robot
@@ -47,7 +47,7 @@
     visual_parameters_file="${visual_params}"
     sim_gazebo="$(arg sim_gazebo)"
     generate_ros2_control_tag="false">
-    <origin xyz="-0.32 0.58 0.0" rpy="0 0 -1.066"/>
+    <origin xyz="-0.32 0.58 0.0" rpy="0 0 0"/>
   </xacro:ur_robot>
 
   <xacro:ur_robot
@@ -60,6 +60,6 @@
     visual_parameters_file="${visual_params}"
     sim_gazebo="$(arg sim_gazebo)"
     generate_ros2_control_tag="false">
-    <origin xyz="0.32 0.58 0.0" rpy="0 0 -2.075"/>
+    <origin xyz="0.32 0.58 0.0" rpy="0 0 0"/>
   </xacro:ur_robot>
 </robot>
